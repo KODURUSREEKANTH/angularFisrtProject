@@ -1,0 +1,16 @@
+<p>admin-page works!</p>
+<nav class="navbar navbar-light bg-light">
+    <form class="container-fluid justify-content-start">
+        
+        <a class="btn btn-outline-success me-2" routerLink="/admin" (click)=" getbyrole()">AllUsers</a>
+        <a class="btn btn-outline-success me-2" (click)="getbystatus()">InactiveUsers</a>
+        
+        <a class="nav-item btn btn-danger" (click)="logout()">Logout</a>
+        
+    </form>
+  
+</nav>
+
+
+<adminview [userlist]=userlist></adminview>
+

@@ -1,0 +1,38 @@
+<h2 style="color: magenta;">Welcome for HCL bank application</h2>
+<div id="apply" class="card">
+    <h4 class="card-header" style="text-align: center;">login page</h4>
+    <div class="card-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username">Username(EmailId)</label>
+                <input type="text" formControlName="username" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+            </div>
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Login
+            </button>
+
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        </form>
+        <br>
+        <span style="color:rgb(165, 42, 42);"><button type="submit" class="btn btn-outline-info btn-sm"
+                (click)="toRegister()"><strong>Register for new Account</strong> </button></span>
+
+        <!--  <add-account></add-account> -->
+    </div>
+</div>
+<p><strong>adminUserName:</strong>admin@gmail.com</p>
+<p><strong>adminPassword:</strong>admin</p>
+<p><strong>JsonServer:</strong>json-server --watch storage.json --port=3000</p>

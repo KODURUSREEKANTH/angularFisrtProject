@@ -1,0 +1,105 @@
+<div class="container-fluid">
+  <div  class="card">
+    <h4 id="top" class="card-header">Register for UserAccount</h4>
+  </div>
+</div>
+
+
+<div id="apply" class="container">
+  <div class="row">
+    <div class="col">
+
+      <form class="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group ">
+          <label class="col control-label" for="firstname">FirstName:</label>
+          <div class="col">
+            <input id="firstname" name="firstname" type="text" placeholder="Enter FirstName " class="form-control "
+              formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+
+            <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+              <div *ngIf="f.firstname.errors.required">firstname is required</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="lastname">LastName:</label>
+          <div class="col">
+            <input id="lastname" name="lastname" type="text" placeholder="Enter LastName"
+              [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" class="form-control "
+              formControlName="lastname">
+            <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+              <div *ngIf="f.lastname.errors.required">lastname is required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="emailId">UserName(EmailId):</label>
+          <div class="col">
+            <input id="emailId" name="emailId" type="email" placeholder="Enter EmailId" class="form-control "
+              formControlName="emailId" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }">
+            <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+              <div *ngIf="f.emailId.errors.required">emailId is required</div>
+            </div>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col control-label" for="phoneNo">phoneNo:</label>
+          <div class="col">
+            <input id="phoneNo" name="phoneNo" type="text" placeholder="Enter Mobile No" class="form-control "
+              formControlName="phoneNo" [ngClass]="{ 'is-invalid': submitted && f.phoneNo.errors }">
+            <div *ngIf="submitted && f.phoneNo.errors" class="invalid-feedback">
+              <div *ngIf="f.phoneNo.errors.required">phoneNo is required</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multiple Radios -->
+        <div class="form-group">
+          <div class="col">
+            <div class="radio">
+              <label for="gender-0"> Male
+
+
+                <input type="radio" name="gender" value="Male" checked="checked" formControlName="gender"
+                  [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+              </label>
+              &nbsp;
+              <label for="gender-1"> Female
+
+                <input type="radio" name="gender" value="Female" formControlName="gender"
+                  [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="form-group ">
+          <label class="col control-label" for="password">Password:</label>
+          <div class="col">
+            <input id="password" name="password" type="password" placeholder="Enter password " class="form-control "
+              formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">password is required</div>
+            </div>
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid">Register</button>
+      </form>
+      <br>
+      <span style="color:brown;"><button type="submit" class="btn btn-sm btn-secondary"
+          (click)="toLogin()"><strong>Already have a Account</strong></button></span>
+
+    </div>
+
+    
+  </div>
+</div>

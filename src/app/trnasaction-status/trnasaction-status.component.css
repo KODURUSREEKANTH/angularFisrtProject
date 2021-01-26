@@ -1,0 +1,15 @@
+#apply{
+    
+    border: 2px solid black;
+ 
+    margin-top: 50px;
+    margin-bottom: 0px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: rgb(243, 245, 241);
+
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+}

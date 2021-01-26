@@ -1,0 +1,13 @@
+#apply {
+    border: 2px solid rgb(166, 255, 0);
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: rgb(224, 228, 224);
+  }
+  #top {
+    text-align: center;
+    background-color: rgb(235, 243, 235);
+   
+  }

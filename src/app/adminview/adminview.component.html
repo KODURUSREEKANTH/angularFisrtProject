@@ -1,0 +1,30 @@
+<table id="apply" *ngIf="userlist">
+  <thead id="apply">
+    <tr id="apply">
+
+      <th id="apply">firstname</th>
+      <th id="apply">lastName</th>
+      <th id="apply">emailId</th>
+      <th id="apply">phoneNo</th>
+      <th id="apply">accStatus</th>
+
+
+    </tr>
+  </thead>
+  <tbody *ngFor="let t of userlist; let i = index">
+    <tr id="apply">
+
+      <td id="apply">{{t.firstname}}</td>
+      <td id="apply">{{t.lastname}}</td>
+      <td id="apply">{{t.emailId}}</td>
+      <td id="apply">{{t.phoneNo}}</td>
+      <td id="apply"  [ngStyle]="{'color': t.accStatus=='active'? 'green' : 'red'}">{{t.accStatus}}</td>
+      <td ><button class="btn btn-secondary" (click)="
+            editusr(t)" *ngIf="t.accStatus==='inactive'&&t.account==null">Modify</button></td>
+      <td ><button class="btn btn-info" (click)="
+            view(t)" *ngIf="t.accStatus==='active'||t.account!=null">Details</button></td>
+
+    </tr>
+
+  </tbody>
+</table>
